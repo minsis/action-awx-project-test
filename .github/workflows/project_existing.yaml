@@ -53,7 +53,7 @@ jobs:
     steps:
       - name: Create unqiue timestamp
         id: date
-        run: echo "TIMESTAMP=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+        run: echo "TIMESTAMP=$(date)" >> $GITHUB_ENV
 
       - name: Start AWX
         id: start-awx
