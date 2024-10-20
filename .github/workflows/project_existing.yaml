@@ -67,5 +67,5 @@ jobs:
           controller_verify_certificate: ${{ github.event.inputs.controller_verify_certificate }}
           project_id: 6
           name: "Demo Project"
-          description: "Demo Project - $TIMESTAMP"
+          description: Demo Project - ${{ env.TIMESTAMP }}
           organization: 1
