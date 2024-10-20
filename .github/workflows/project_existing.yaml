@@ -53,7 +53,7 @@ jobs:
     steps:
       - name: Create unqiue timestamp
         id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+        run: echo "TIMESTAMP=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
       - name: Start AWX
         id: start-awx
@@ -67,5 +67,5 @@ jobs:
           controller_verify_certificate: ${{ github.event.inputs.controller_verify_certificate }}
           project_id: 6
           name: "Demo Project"
-          description: Demo Project - ${{ steps.date.outputs.date }}
+          description: "Demo Project - $TIMESTAMP"
           organization: 1
