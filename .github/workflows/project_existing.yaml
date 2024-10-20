@@ -51,6 +51,10 @@ jobs:
     name: Test a existing Project
     runs-on: ubuntu-latest
     steps:
+      - name: Create unqiue timestamp
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+
       - name: Start AWX
         id: start-awx
         uses: irunasroot/action-awx-project@releases/v1
@@ -63,4 +67,5 @@ jobs:
           controller_verify_certificate: ${{ github.event.inputs.controller_verify_certificate }}
           project_id: 6
           name: "Demo Project"
+          description: Demo Project - ${{ steps.date.outputs.date }}
           organization: 1
