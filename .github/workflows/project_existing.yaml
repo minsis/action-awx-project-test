@@ -1,4 +1,4 @@
-name: Job Template - Complex Exeuction
+name: Project - Existing
 
 on:
   workflow_dispatch:
@@ -47,8 +47,8 @@ permissions:
   contents: read
 
 jobs:
-  test-awx-jt-simple:
-    name: Test a complex Job Template
+  test-awx-project-existing:
+    name: Test a existing Project
     runs-on: ubuntu-latest
     steps:
       - name: Start AWX
